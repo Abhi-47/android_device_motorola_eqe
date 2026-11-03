@@ -1,0 +1,16 @@
+type hal_gpu_default, hal_gpu_default_type, hal_gpu_default_typeattr;
+type hal_gpu_default_exec, hal_gpu_default_exec_type, hal_gpu_default_exec_typeattr;
+type vendor_hwcomposer_service, vendor_hwcomposer_service_type, vendor_hwcomposer_service_typeattr;
+type vendor_hwcomposer_service_exec, vendor_hwcomposer_service_exec_type, vendor_hwcomposer_service_exec_typeattr;
+
+hal_server_domain(hal_gpu_default, hal_gpu_default_type, hal_gpu_default_typeattr)
+hal_server_domain(vendor_hwcomposer_service, vendor_hwcomposer_service_type, vendor_hwcomposer_service_typeattr)
+
+hal_client_domain(hal_gpu_default, hal_gpu_default_type, hal_gpu_default_typeattr)
+hal_client_domain(vendor_hwcomposer_service, vendor_hwcomposer_service_type, vendor_hwcomposer_service_typeattr)
+
+# Allow GPU service to access vendor GPU device
+allow hal_gpu_default vendor_gpu_device:chr_file { open read write ioctl };
+
+# Allow HWC service to access vendor display device
+allow vendor_hwcomposer_service vendor_display_device:chr_file { open read write ioctl };
