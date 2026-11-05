@@ -488,7 +488,11 @@ DEVICE_MANIFEST_CROW_FILES += \
     $(DEVICE_PATH)/manifest_crow.xml \
     hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
     hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml \
-    $(DEVICE_PATH)/configs/secure_element-service.xml
+    $(DEVICE_PATH)/configs/secure_element-service.xml \
+    vendor/motorola/eqe/proprietary/vendor/etc/vintf/manifest/vendor.arcsoft.hardware.camera.postproc.xml \
+    vendor/motorola/eqe/proprietary/vendor/etc/vintf/manifest/vendor.qti.camera.aon-impl-1.0.xml \
+    vendor/motorola/eqe/proprietary/vendor/etc/vintf/manifest/vendor.qti.camera.postproc-impl.xml \
+    vendor/motorola/eqe/proprietary/vendor/etc/vintf/manifest/vendor.qti.camera.provider.xml
 ODM_MANIFEST_SKUS += dn dne
 ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/manifest_eqe_dn.xml
 ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/manifest_eqe_dne.xml

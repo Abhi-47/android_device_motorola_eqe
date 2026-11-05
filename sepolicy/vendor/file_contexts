@@ -15,6 +15,10 @@
 /(vendor|system/vendor)/lib64/libqmimotext\.so                                           u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib64/libiqi_bridge\.so                                          u:object_r:same_process_hal_file:s0
 
+# Camera HAL binaries
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.camera\.provider-service_64          u:object_r:hal_camera_default_exec:s0
+/(vendor|system/vendor)/bin/hw/motorola\.hardware\.camera\.desktop@2\.0-service  u:object_r:hal_camera_default_exec:s0
+
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.eqe              u:object_r:hal_fingerprint_default_exec:s0
 
