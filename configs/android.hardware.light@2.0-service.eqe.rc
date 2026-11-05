@@ -1,0 +1,10 @@
+service vendor.light-hal-2-0 /vendor/bin/hw/android.hardware.light@2.0-service.eqe
+    class hal
+    user system
+    group system vendor camera
+    capabilities SYS_NICE
+    seclabel u:r:hal_flashlight_default:s0
+    writepid /dev/cpuset/system-background/tasks
+
+on property:vendor.light-hal-2-0=running
+    setprop vendor.light-hal-2-0.ready 1

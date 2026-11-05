@@ -1,0 +1,23 @@
+cc_library_shared {
+    name: "flashlight.eqe",
+    relative_install_path: "hw",
+    proprietary: true,
+    vendor: true,
+    srcs: [
+        "Flashlight.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libhardware",
+        "libhidlbase",
+        "libhidltransport",
+        "libutils",
+        "android.hardware.light@2.0",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wunused",
+        "-Wunreachable-code",
+    ],
+}

@@ -1,0 +1,18 @@
+# Flashlight HAL SEPolicy
+type hal_flashlight_default, hal_flashlight_default_type, hal_flashlight_default_typeattr;
+type hal_flashlight_default_exec, hal_flashlight_default_exec_type, hal_flashlight_default_exec_typeattr;
+
+hal_server_domain(hal_flashlight_default, hal_flashlight_default_type, hal_flashlight_default_typeattr)
+hal_client_domain(hal_flashlight_default, hal_flashlight_default_type, hal_flashlight_default_typeattr)
+
+# Allow flashlight HAL to access sysfs for LED control
+allow hal_flashlight_default sysfs_leds:filesystem getattr;
+allow hal_flashlight_default sysfs_leds:file { read write open };
+allow hal_flashlight_default sysfs:dir { search };
+allow hal_flashlight_default sysfs:file { read write open getattr };
+
+# Allow flashlight HAL to read max_brightness
+allow hal_flashlight_default sysfs_leds:file { ioctl };
+
+# VINTF/HIDL service
+allow hal_flashlight_default hal_flashlight_default:hwbinder_service { find add };

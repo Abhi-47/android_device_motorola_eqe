@@ -1,0 +1,18 @@
+# Dolby Atmos / DAP SEPolicy
+type hal_dolby_default, hal_dolby_default_type, hal_dolby_default_typeattr;
+type hal_dolby_default_exec, hal_dolby_default_exec_type, hal_dolby_default_exec_typeattr;
+
+hal_server_domain(hal_dolby_default, hal_dolby_default_type, hal_dolby_default_typeattr)
+hal_client_domain(hal_dolby_default, hal_dolby_default_type, hal_dolby_default_typeattr)
+
+# Allow Dolby HAL to access audio config and effects
+allow hal_dolby_default audio_prop:property_service { set };
+allow hal_dolby_default vendor_configs_file:file { read open };
+allow hal_dolby_default vendor_file:file { read open };
+
+# Audio HAL communication
+allow hal_dolby_default audioserver:service_manager { add find };
+allow hal_dolby_default hal_audio_default:service_manager { add find };
+
+# VINTF/HIDL service
+allow hal_dolby_default hal_dolby_default:hwbinder_service { find add };

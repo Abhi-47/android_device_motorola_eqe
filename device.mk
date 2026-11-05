@@ -120,6 +120,15 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     sound_trigger.primary.crow
 
+# Dolby Atmos / DAP (requires proprietary blobs from stock ROM)
+PRODUCT_PACKAGES += \
+    libds1 \
+    libds2 \
+    libdax \
+    libdolby \
+    libdolbyms12 \
+    libdolbyatmos
+
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8550/audio/primary-hal
 CONFIG_HAL_SRC_DIR := $(AUDIO_HAL_DIR)/configs/crow
 CONFIG_PAL_SRC_DIR := $(AUDIO_HAL_DIR)/../pal/configs/crow
@@ -469,6 +478,14 @@ PRODUCT_SOONG_NAMESPACES += \
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
+
+# Flashlight
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.eqe \
+    flashlight.eqe
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/android.hardware.light@2.0-service.eqe.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.light@2.0-service.eqe.rc
 
 # Vibrator
 PRODUCT_PACKAGES += \

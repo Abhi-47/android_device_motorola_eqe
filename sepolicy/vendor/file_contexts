@@ -24,3 +24,16 @@
 
 # Touch
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch-service\.eqe              u:object_r:hal_lineage_touch_default_exec:s0
+
+# Flashlight
+/(vendor|system/vendor)/lib64/hw/flashlight\.eqe\.so                            u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.eqe        u:object_r:hal_flashlight_default_exec:s0
+
+# Dolby Atmos / DAP libraries
+/(vendor|system/vendor)/lib64/soundfx/libds1\.so                                u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib64/soundfx/libds2\.so                                u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib64/soundfx/libdax\.so                                u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib64/soundfx/libdolby\.so                              u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib64/soundfx/libdolbyms12\.so                          u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib64/soundfx/libdolbyatmos\.so                         u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dolby@1\.0-service      u:object_r:hal_dolby_default_exec:s0
